@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  homarr:
+    image: ghcr.io/homarr-labs/homarr:latest
+    container_name: homarr
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT}:7575"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/data
